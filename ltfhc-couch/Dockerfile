@@ -6,7 +6,7 @@ ADD sources.list /etc/apt/sources.list
 
 RUN apt-get install debian-archive-keyring && apt-get update
 
-RUN apt-get install -y build-essential wget curl
+RUN apt-get install -y --force-yes build-essential wget curl
 
 # erlang and couch deps
 RUN apt-get install -y erlang-base-hipe \
