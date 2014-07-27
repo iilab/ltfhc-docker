@@ -2,7 +2,7 @@ FROM debian:wheezy
 
 MAINTAINER Jun Matsushita jun@iilab.org
 
-ADD source.list /etc/apt/sources.list
+ADD sources.list /etc/apt/sources.list
 
 RUN apt-get update && apt-get install -y build-essential wget curl
 
