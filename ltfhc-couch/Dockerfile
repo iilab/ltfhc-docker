@@ -64,5 +64,5 @@ RUN ./opt/stud-config
 # Define mountable directories.
 VOLUME ["/usr/local/var/log/couchdb", "/usr/local/var/lib/couchdb", "/usr/local/etc/couchdb"]
 
-EXPOSE 493
+EXPOSE 6984
 CMD ["/opt/start"]

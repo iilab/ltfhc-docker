@@ -14,7 +14,7 @@ openssl genrsa -out id_stud 1024
 # create a signing request
 #
 openssl req -new -key id_stud -out server_stud.csr \
-  -subj "/C=PT/ST=NY/L=NY/O=Stud Proxy/OU=IT Department/CN=foo.org"
+  -subj "/C=/ST=/L=/O=iilab/OU=LTFHC/CN=www.health"
 
 #
 # create a self signed certificate using our signing request
