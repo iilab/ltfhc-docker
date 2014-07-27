@@ -1,0 +1,3 @@
+deb https://cdn.debian.net/debian wheezy main
+deb https://cdn.debian.net/debian wheezy-updates main
+deb https://cdn.debian.org wheezy/updates main
