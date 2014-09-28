@@ -49,9 +49,7 @@ RUN /opt/couchdb-config
 #RUN apt-get install -y sudo
 
 # cleanup
-#RUN apt-get remove -y curl && \
- apt-get autoremove -y && apt-get clean -y && \
- rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+RUN apt-get remove -y curl && apt-get autoremove -y && apt-get clean -y && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 #ADD ./opt/stud.conf /usr/local/etc/stud/
 #ADD ./opt/generate-pem /root/
