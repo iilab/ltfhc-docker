@@ -55,7 +55,8 @@ RUN /opt/couchdb-config
 
 #ADD ./opt/stud.conf /usr/local/etc/stud/
 #ADD ./opt/generate-pem /root/
-#ADD ./opt/start /opt/
+ADD ./opt/start /opt/
+ADD ./opt/start_couch /opt/
 #ADD ./opt/stud-config /opt/
 
 #RUN ./root/generate-pem
