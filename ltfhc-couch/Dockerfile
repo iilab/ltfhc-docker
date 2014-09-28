@@ -43,23 +43,23 @@ RUN apt-get install -y adduser
 RUN sed -e 's/^bind_address = .*$/bind_address = 0.0.0.0/' -i /usr/local/etc/couchdb/default.ini
 RUN /opt/couchdb-config
 
-RUN apt-get update && apt-get install -y curl libev4 libssl-dev libev-dev
-RUN (mkdir /tmp/stud && cd /tmp/stud && curl -L# https://github.com/bumptech/stud/archive/master.tar.gz | tar zx --strip 1 && make && make install && rm -rf /tmp/stud)
+#RUN apt-get update && apt-get install -y curl libev4 libssl-dev libev-dev
+#RUN (mkdir /tmp/stud && cd /tmp/stud && curl -L# https://github.com/bumptech/stud/archive/master.tar.gz | tar zx --strip 1 && make && make install && rm -rf /tmp/stud)
 
-RUN apt-get install -y sudo
+#RUN apt-get install -y sudo
 
 # cleanup
-RUN apt-get remove -y curl && \
+#RUN apt-get remove -y curl && \
  apt-get autoremove -y && apt-get clean -y && \
  rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
-ADD ./opt/stud.conf /usr/local/etc/stud/
-ADD ./opt/generate-pem /root/
-ADD ./opt/start /opt/
-ADD ./opt/stud-config /opt/
+#ADD ./opt/stud.conf /usr/local/etc/stud/
+#ADD ./opt/generate-pem /root/
+#ADD ./opt/start /opt/
+#ADD ./opt/stud-config /opt/
 
-RUN ./root/generate-pem
-RUN ./opt/stud-config
+#RUN ./root/generate-pem
+#RUN ./opt/stud-config
 
 # Define mountable directories.
 VOLUME ["/usr/local/var/log/couchdb", "/usr/local/var/lib/couchdb", "/usr/local/etc/couchdb"]
