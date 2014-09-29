@@ -46,15 +46,15 @@ RUN /opt/couchdb-config
 #RUN apt-get update && apt-get install -y curl libev4 libssl-dev libev-dev
 #RUN (mkdir /tmp/stud && cd /tmp/stud && curl -L# https://github.com/bumptech/stud/archive/master.tar.gz | tar zx --strip 1 && make && make install && rm -rf /tmp/stud)
 
-#RUN apt-get install -y sudo
+RUN apt-get install -y sudo
 
 # cleanup
 RUN apt-get remove -y curl && apt-get autoremove -y && apt-get clean -y && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 #ADD ./opt/stud.conf /usr/local/etc/stud/
 #ADD ./opt/generate-pem /root/
-ADD ./opt/start /opt/
-ADD ./opt/start_couch /opt/
+ADD ./opt/start /opt/start
+ADD ./opt/start_couch /opt/start_couch
 #ADD ./opt/stud-config /opt/
 
 #RUN ./root/generate-pem
